@@ -15,12 +15,12 @@ app.use(express.json())
 app.post('/todo',async function(req, res) {
     const createPayLoad = req.body;
     const parsePayLoad = createTodo.safeParse(createPayLoad);
-    if (parsePayLoad.success) {
-        return;
-    } else {
+    if (!parsePayLoad.success) {
         res.status(411).json({
             msg: "you sent the wrong inputs"
         })
+    } else {
+        return;
     }
     // step 4 : create a mongodb connection
     await todo.create({
