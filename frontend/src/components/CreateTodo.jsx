@@ -8,14 +8,14 @@ export function CreateTodo() {
     return <div>
         <input id="title" style={{
             padding: "10",
-            margin: "10",
+            margin: "10"
         }} type = "text" placeholder = "title" onChange={function(e) {
             const value = e.target.value;
             setTitle(value);
         }}></input> <br />
         <input id="desc"  style={{
             padding: "10",
-            margin: "10",
+            margin: "10"
         }} type = "text" placeholder = "description"  onChange={function(e) {
             const value = e.target.value;
             setDescriptipn(value);
@@ -23,7 +23,7 @@ export function CreateTodo() {
 
         <button  style={{
             padding: "10",
-            margin: "10",
+            margin: "10"
         }} onClick={() => {
             fetch("http://localhost:3000/todo", {
                 method: "POST",
